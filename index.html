@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Card</title>
+    <!-- Empty favicon so the browser doesn't log a favicon.ico 404 in the Console -->
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>GitHub Profile Lookup</h1>
+
+      <form id="search-form">
+        <label for="username-input">GitHub username</label>
+        <div class="search-row">
+          <input
+            id="username-input"
+            name="username"
+            type="text"
+            placeholder="e.g. octocat"
+            autocomplete="off"
+            required
+          />
+          <button id="search-button" type="submit">Search</button>
+        </div>
+      </form>
+
+      <!-- Loading and error messages go here. aria-live lets screen readers announce them. -->
+      <p id="status" class="status" aria-live="polite"></p>
+
+      <!-- The card stays hidden until every field has been filled in. -->
+      <article id="card" class="card" hidden>
+        <img id="card-avatar" class="card-avatar" alt="" width="120" height="120" />
+        <div class="card-body">
+          <h2 id="card-name"></h2>
+          <p id="card-login" class="card-login"></p>
+          <p id="card-bio" class="card-bio"></p>
+          <ul class="card-stats">
+            <li><span id="card-repos"></span> public repos</li>
+            <li><span id="card-followers"></span> followers</li>
+          </ul>
+          <a id="card-link" href="#" target="_blank" rel="noopener noreferrer">View profile on GitHub</a>
+        </div>
+      </article>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
